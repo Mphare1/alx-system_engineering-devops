@@ -1,2 +1,2 @@
 #!/bin/bash
-find . .. /boot -type f -ls
+ls -la . .. /bootx
