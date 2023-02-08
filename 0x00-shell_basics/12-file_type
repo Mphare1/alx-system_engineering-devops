@@ -1,2 +1,2 @@
 #!/bin/bash
-file /tmp/iamafile | awk '{print $2}'
+file /tmp/iamafile
