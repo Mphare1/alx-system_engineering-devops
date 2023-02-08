@@ -1,2 +1,1 @@
-#!/bin/bash
-find . .. /boot -type f -ls
+#!/bin/bashfind . .. /boot -type f -ls
