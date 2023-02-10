@@ -1,2 +1,1 @@
-#!/bin/bash
-chmod 757 hello
+#!/bin/bashchmod 757 hello
