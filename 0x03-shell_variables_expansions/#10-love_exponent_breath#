@@ -1,0 +1,6 @@
+#!/bin/badsh
+select  in ; do
+    $
+done
+
+echo $((BREATH**LOVE))
