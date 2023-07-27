@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-x=0
-while [ $x -lt 10 ]; do
-      echo "Best School"
-      ((x++))
+count=0
+while [ $count -lt 10 ]; do
+    echo "Best School"
+    ((count++))
 done
+
