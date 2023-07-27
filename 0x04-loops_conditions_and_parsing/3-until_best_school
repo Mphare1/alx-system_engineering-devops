@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# displays "Best School" 10 times using until loop
+iteration=1
+until [ $iteration -gt 10 ]; do
+    echo "Best School"
+    (( iteration++ ))
+done
