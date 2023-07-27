@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# displays "Best School" and then "Hi" on a new line.
+# script to display "Best School" 9 times and after 9th iteration display "Hi"
 
 iteration=1
 while [ $iteration -le 10 ]; do
