@@ -1,17 +1,20 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Script to check information about the school file
 
-for ((i=1; i<=100; i++))
-do
-    if ((i % 3 == 0)) && ((i % 5 == 0))
-    then
-        echo "FizzBuzz"
-    elif ((i % 3 == 0))
-    then
-        echo "Fizz"
-    elif ((i % 5 == 0))
-    then
-        echo "Buzz"
+if [ -e "school" ]; then
+    echo "school file exists"
+    if [ -s "school" ]; then
+        echo "school file is not empty"
     else
-        echo "$i"
+        echo "school file is empty"
     fi
-done
+
+    if [ -f "school" ]; then
+        echo "school is a regular file"
+    else
+        echo "school is not a regular file"
+    fi
+else
+    echo "school file does not exist"
+fi
+
