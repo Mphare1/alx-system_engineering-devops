@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
-# script to install nginx
-
+#Install nginx on my 1730-web-01 server listening on port 80
 apt-get -y update
 apt-get -y install nginx
-mkdir -p /var/www/html
-chown -R "$USER":"$USER"  /var/www/html/
 echo "Hello World!" > /var/www/html/index.html
-
-if [[ $(pgrep nginx) ]]
-then
-	sudo service nginx restart
-else
-	sudo service nginx start
-fi
+service nginx start
