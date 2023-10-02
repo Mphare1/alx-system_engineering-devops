@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Install your load balancer. Script to set HTTP response for two servers
+# Install load balancer
 sudo apt-get -y install nginx
 echo "School" | sudo tee /usr/share/nginx/html/index.html
-new_string="location /redirect_me {\nrewrite ^/(.*)$ https://www.youtube.com/watch?v=wINua1u4yMs permanent;\n}\n"
+new_string="location /redirect_me {\nrewrite ^/(.*)$ https://github.com/Mphare1 permanent;\n}\n"
 sed -i "/# Only/ i $new_string" /etc/nginx/sites-available/default
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
 replace="#error_page"
