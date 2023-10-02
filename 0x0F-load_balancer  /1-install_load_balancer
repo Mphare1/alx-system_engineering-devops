@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# Double number of webservers
-sudo apt-get -y update && sudo apt-get -y install haproxy
-sudo sed -i "s/ENABLED=0/ENABLED=1/g" /etc/default/haproxy
-sudo sed -i "\$ a\listen 349-lb-01\n\tbind *:80\n\tmode http\n\tstats enable\n\tbalance roundrobin\n\tserver 280446-web-01 100.25.143.226:80 check\n\tserver 280446-web-02 52.91.154.19:80 check" /etc/haproxy/haproxy.cfg
-sudo service haproxy start
