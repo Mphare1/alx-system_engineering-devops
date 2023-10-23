@@ -1,24 +1,23 @@
 #!/usr/bin/python3
+
 """
-exports to csv file
+Exports data to a CSV file.
 """
+
 import csv
-from requests import get
+import requests
 from sys import argv
 
-if __name__ == '__main__':
-        tasks = []
-        tasks_list = []
-        root = 'https://jsonplaceholder.typicode.com'
-        user = get(root + '/users/{}'.format(argv[1])).json()
-        for i in get(root + '/todos').json():
-            if i.get('userId') == int(argv[1]):
-                tasks.append(argv[1])
-                tasks.append(user.get('username'))
-                tasks.append(i.get('completed'))
-                tasks.append(i.get('title'))
-                tasks_list.append(tasks)
-                tasks = []
-        with open('{}.csv'.format(argv[1]), 'w') as f:
-            f_csv = csv.writer(f, quoting=csv.QUOTE_ALL)
-            f_csv.writerows(tasks_list)
+if __name__ == '__main':
+    tasks_list = []
+    root = 'https://jsonplaceholder.typicode.com'
+    user = requests.get(f'{root}/users/{argv[1]}').json()
+
+    for i in requests.get(f'{root}/todos').json():
+        if i.get('userId') == int(argv[1]):
+            tasks = [argv[1], user.get('username'), i.get('completed'), i.get('title')]
+            tasks_list.append(tasks)
+
+    with open(f'{argv[1]}.csv', 'w', newline='') as f:
+        f_csv = csv.writer(f, quoting=csv.QUOTE_ALL)
+        f_csv.writerows(tasks_list)
